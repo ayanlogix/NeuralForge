@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuralForge — Local AI Text Tool</title>
+    <meta name="description" content="A privacy-first AI tool for text summarization and generation. Runs 100% locally in your browser — no API key required.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+    <!-- Animated Background Orbs -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="app-container">
+
+        <!-- ── Header ─────────────────────────────── -->
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="ph-bold ph-brain"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>NeuralForge</h1>
+                    <span class="logo-subtitle">Local AI Studio</span>
+                </div>
+            </div>
+            <div class="header-badges">
+                <div class="badge badge-green">
+                    <i class="ph-bold ph-shield-check"></i> No API
+                </div>
+                <div class="badge badge-purple">
+                    <i class="ph-bold ph-lock"></i> 100% Private
+                </div>
+            </div>
+        </header>
+
+        <!-- ── Mode Tabs ───────────────────────────── -->
+        <div class="tabs" role="tablist">
+            <button class="tab-btn active" data-tab="summarize" role="tab" id="tab-summarize">
+                <i class="ph-bold ph-text-align-left"></i>
+                <span>Summarize</span>
+            </button>
+            <button class="tab-btn" data-tab="generate" role="tab" id="tab-generate">
+                <i class="ph-bold ph-sparkle"></i>
+                <span>Generate</span>
+            </button>
+            <div class="tab-indicator" aria-hidden="true"></div>
+        </div>
+
+        <!-- ── Input Area ──────────────────────────── -->
+        <div class="input-card">
+            <div class="textarea-wrapper">
+                <textarea
+                    id="userInput"
+                    aria-label="Input text"
+                    placeholder="Paste a long article, document, or any text here to get a clean bullet-point summary..."
+                ></textarea>
+                <div class="char-count"><span id="currentChar">0</span> chars</div>
+            </div>
+
+            <button id="processBtn" class="primary-btn" aria-live="polite">
+                <span class="btn-content">
+                    <i class="ph-bold ph-lightning"></i>
+                    <span id="btnText">✦ Summarize Text</span>
+                </span>
+                <div class="loader hidden" aria-label="Processing..."></div>
+            </button>
+        </div>
+
+        <!-- ── Progress Bar ────────────────────────── -->
+        <section id="progressSection" class="progress-section hidden" aria-live="polite">
+            <div class="progress-top">
+                <div class="progress-icon"><i class="ph-bold ph-brain"></i></div>
+                <div class="progress-labels">
+                    <span id="statusText">Initializing AI model...</span>
+                    <span id="percentageText" class="pct">0%</span>
+                </div>
+            </div>
+            <div class="progress-bar-track">
+                <div id="progressBar" class="progress-bar-fill"></div>
+            </div>
+            <p class="progress-note">
+                <i class="ph ph-info"></i>
+                Models are cached in your browser — download only happens once.
+            </p>
+        </section>
+
+        <!-- ── Output ──────────────────────────────── -->
+        <section id="outputSection" class="output-section hidden">
+            <div class="output-header">
+                <h2 class="output-title">
+                    <i class="ph-bold ph-quotes"></i> AI Result
+                </h2>
+                <button id="copyBtn" class="icon-btn" title="Copy result" aria-label="Copy result to clipboard">
+                    <i class="ph ph-copy"></i>
+                </button>
+            </div>
+            <div id="outputContent" class="markdown-body" role="region" aria-label="AI output"></div>
+        </section>
+
+    </div>
+
+    <!-- ── Footer ─────────────────────────────────── -->
+    <footer class="app-footer">
+        <p>NeuralForge &mdash; Powered by <a href="https://huggingface.co/docs/transformers.js" target="_blank" rel="noopener">Transformers.js</a> &bull; No data leaves your browser</p>
+    </footer>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>

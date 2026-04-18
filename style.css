@@ -517,7 +517,9 @@ textarea:focus {
     color: var(--primary-2);
     text-decoration: none;
 }
-.app-footer a:hover { text-decoration: underline; }
+.app-footer a:hover {
+  text-shadow: 0 0 6px #4f8cff;
+}
 
 /* ── Animations ───────────────────────────────────────────────────────────── */
 @keyframes slideIn {

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
-/* ── Design Tokens ────────────────────────────────────────────────────────── */
+/* || Design Tokens || */
 :root {
     --bg:            #050711;
     --surface:       rgba(12, 15, 26, 0.85);
@@ -30,10 +30,10 @@
     --radius-xl:     32px;
 }
 
-/* ── Reset ────────────────────────────────────────────────────────────────── */
+/* || Reset || */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Base ─────────────────────────────────────────────────────────────────── */
+/* || Base || */
 html { scroll-behavior: smooth; }
 
 body {
@@ -51,7 +51,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ── Animated Background Orbs ─────────────────────────────────────────────── */
+/* || Animated Background Orbs || */
 .bg-orbs {
     position: fixed;
     inset: 0;
@@ -97,7 +97,7 @@ body {
     to   { transform: translate(40px, 30px) scale(1.1); }
 }
 
-/* ── App Container ────────────────────────────────────────────────────────── */
+/* || App Container || */
 .app-container {
     position: relative;
     z-index: 1;
@@ -115,7 +115,7 @@ body {
         0 0 60px -20px var(--glow-primary);
 }
 
-/* ── Header ───────────────────────────────────────────────────────────────── */
+/* || Header || */
 .app-header {
     display: flex;
     justify-content: space-between;
@@ -187,7 +187,7 @@ body {
     border: 1px solid rgba(99, 102, 241, 0.25);
 }
 
-/* ── Tabs ─────────────────────────────────────────────────────────────────── */
+/* || Tabs || */
 .tabs {
     display: flex;
     position: relative;
@@ -233,7 +233,7 @@ body {
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── Input Card ───────────────────────────────────────────────────────────── */
+/* || Input Card || */
 .input-card {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid var(--border);
@@ -276,7 +276,7 @@ textarea:focus {
     color: var(--text-muted);
 }
 
-/* ── Primary Button ───────────────────────────────────────────────────────── */
+/* || Primary Button || */
 .primary-btn {
     width: 100%;
     background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
@@ -316,7 +316,7 @@ textarea:focus {
     gap: 0.5rem;
 }
 
-/* ── Progress Section ─────────────────────────────────────────────────────── */
+/* || Progress Section || */
 .progress-section {
     margin-top: 1.5rem;
     background: rgba(99, 102, 241, 0.05);
@@ -388,7 +388,7 @@ textarea:focus {
     gap: 0.35rem;
 }
 
-/* ── Output Section ───────────────────────────────────────────────────────── */
+/* || Output Section || */
 .output-section {
     margin-top: 1.5rem;
     animation: slideIn 0.4s ease;
@@ -431,7 +431,7 @@ textarea:focus {
     border-color: var(--border-hover);
 }
 
-/* ── Markdown Output ──────────────────────────────────────────────────────── */
+/* || Markdown Output || */
 .markdown-body {
     background: rgba(0, 0, 0, 0.25);
     border: 1px solid var(--border);
@@ -492,7 +492,7 @@ textarea:focus {
     font-style: italic;
 }
 
-/* ── Loader Spinner ───────────────────────────────────────────────────────── */
+/* || Loader Spinner || */
 .loader {
     width: 22px; height: 22px;
     border: 2.5px solid rgba(255,255,255,0.25);
@@ -503,7 +503,7 @@ textarea:focus {
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ── Footer ───────────────────────────────────────────────────────────────── */
+/* || Footer || */
 .app-footer {
     position: relative;
     z-index: 1;
@@ -517,20 +517,18 @@ textarea:focus {
     color: var(--primary-2);
     text-decoration: none;
 }
-.app-footer a:hover {
-  text-shadow: 0 0 6px #4f8cff;
-}
+.app-footer a:hover { text-decoration: underline; }
 
-/* ── Animations ───────────────────────────────────────────────────────────── */
+/* || Animations || */
 @keyframes slideIn {
     from { opacity: 0; transform: translateY(12px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Utility ──────────────────────────────────────────────────────────────── */
+/* || Utility || */
 .hidden { display: none !important; }
 
-/* ── Responsive ───────────────────────────────────────────────────────────── */
+/* || Responsive || */
 @media (max-width: 640px) {
     .app-container   { padding: 1.5rem 1.25rem; border-radius: var(--radius-lg); }
     .app-header      { flex-direction: column; align-items: flex-start; }

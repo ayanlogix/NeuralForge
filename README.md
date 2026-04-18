@@ -1,4 +1,4 @@
-# NeuralForge — Local AI Text Tool
+# NeuralForge | Local AI Text Tool
 
 > **Zero API. Zero cost. 100% private.** Runs entirely in your browser using Transformers.js.
 
